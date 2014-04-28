@@ -1,6 +1,6 @@
 ﻿"""
-    Administration Validator
-    Copyright 2013, Jeroen Doggen, jeroendoggen@gmail.com
+    Student Evaluator
+    Copyright 2014, Jeroen Doggen, jeroendoggen@gmail.com
 """
 
 
@@ -8,7 +8,7 @@ from __future__ import print_function, division  # We require Python 2.6+
 
 import os
 
-from administration_validator.logger import Logger
+from student_evaluator.logger import Logger
 
 class Analyser():
     """ Timer to check the speed of the tool itself (benchmarking) """

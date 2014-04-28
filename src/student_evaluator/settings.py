@@ -1,6 +1,6 @@
 ﻿"""
-    Administration Validator
-    Copyright 2013, Jeroen Doggen, jeroendoggen@gmail.com
+    Student Evaluator
+    Copyright 2014, Jeroen Doggen, jeroendoggen@gmail.com
 """
 
 # TODO: report all students that hand in the assignment after the deadline
@@ -12,7 +12,7 @@ import ConfigParser
 
 class Settings:
     """ Contains all the tools to analyse Blackboard assignments """
-    logfile = "administration_validator.log"
+    logfile = "student_evaluator.log"
     summary_file = 'summary.log'
     script_path = os.getcwd()
     input_path = script_path

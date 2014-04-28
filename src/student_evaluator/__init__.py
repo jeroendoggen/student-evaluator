@@ -1,4 +1,4 @@
-""" Administration Validator: Initialize the package
+""" Student Evaluator: Initialize the package
 
 This file is needed to import the module properly
 The version number is used to generate the PyPI package

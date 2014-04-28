@@ -6,11 +6,11 @@ echo "Starting package build process"
 
 python setup.py --command-packages=stdeb.command sdist_dsc
 
-cd deb_dist/blackboard-analysis-tools-0.0.1/
+cd deb_dist/student-evaluator-0.0.1/
 
 dpkg-buildpackage -rfakeroot -uc -us
 
 cd ..
 
-sudo dpkg -i python-blackboard-analysis-tools_0.0.1-1_all.deb
+sudo dpkg -i python-student-evaluator_0.0.1-1_all.deb
 

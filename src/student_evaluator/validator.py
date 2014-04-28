@@ -1,23 +1,20 @@
 ﻿"""
-    Administration Validator
-    Copyright 2013, Jeroen Doggen, jeroendoggen@gmail.com
+    Student Evaluator
+    Copyright 2014, Jeroen Doggen, jeroendoggen@gmail.com
 """
-
-# TODO: report all students that hand in the assignment after the deadline
-# TODO: ...
 
 
 from __future__ import print_function, division  # We require Python 2.6+
 
 import os
 
-from administration_validator.settings import Settings
-from administration_validator.logger import Logger
-from administration_validator.analyser import Analyser
-from administration_validator.reporter import Reporter
+from student_evaluator.settings import Settings
+from student_evaluator.logger import Logger
+from student_evaluator.analyser import Analyser
+from student_evaluator.reporter import Reporter
 
 
-class AdministrationValidator:
+class StudentEvaluator:
     """ Contains all the tools to analyse Blackboard assignments """
     errors = 0
 

@@ -1,6 +1,6 @@
 ﻿"""
-    Administration Validator
-    Copyright 2013, Jeroen Doggen, jeroendoggen@gmail.com
+    Student Evaluator
+    Copyright 2014, Jeroen Doggen, jeroendoggen@gmail.com
 """
 
 from __future__ import print_function, division  # We require Python 2.6+

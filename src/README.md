@@ -1,37 +1,38 @@
-Administation Validator
-========================
+Student Evaluator
+=================
 
-An analysis tool to check for missing documents in a document archive.
+An analysis tool to check the work that student are doing on a linux server.
 
-Run manually or run as a continuous integration script (Jenkins, nose?)
+ * The script creates several user accounts: s1 -> s99
+ * The student log in as one of these users
+ * Create documents, folders, scripts,.... (as requested in an assignment)
+ * The tool scans the filesystem and creates a report (html)
+ * The students can see the report semi-live
 
 Usage:
 ------
- * Go to the folder with the archive
- * Run the program: ``python -m administation_validator``.
- * Wait...
- * Open the logfile to see the results.
+ * Coming soon
 
 Installation:
 -------------
  * Download the source and run ``python setup.py install``.
  * Python Package available in the Python Package Index at: (coming soon).
- * Install using pip: ``pip install blackboard_analysis_tools``.
+ * Install using pip: ``pip install student_evaluator``.
 
 Limitations:
 ------------
- * Currently only tested on Linux.
- * The program was created with other OS users in mind, so it will eventually get full cross-platform support.
+ * Currently under active development (early Alpha!)
+ * Not feature complete at all!
 
 License:
 --------
-If not stated otherwise blackboard_analysis_tools is distributed in terms of the GPLv2 software license.
-See COPYING in the distribution for details.
+If not stated otherwise student_evaluator is distributed in terms of the MIT software license.
+See LICENSE file in the distribution for details.
 
 Bug reports:
 ------------
  * Jeroen Doggen <jeroendoggen@gmail.com>
- * Post issues to GitHub http://github.com/jeroendoggen/administation_validator/issues.
+ * Post issues to GitHub https://github.com/jeroendoggen/student-evaluator/issues.
 
 Changelog:
 ----------

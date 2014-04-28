@@ -1,10 +1,6 @@
 """
-    Administration Validator
-    A tool to validate documents in a document archive
-    Copyright 2013, Jeroen Doggen, jeroendoggen@gmail.com
-
-    This file is needed to import the module properly
-
+    Student Evaluator
+    Copyright 2014, Jeroen Doggen, jeroendoggen@gmail.com
 """
 
 import sys
