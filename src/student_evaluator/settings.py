@@ -3,8 +3,6 @@
     Copyright 2014, Jeroen Doggen, jeroendoggen@gmail.com
 """
 
-# TODO: report all students that hand in the assignment after the deadline
-# TODO: ...
 
 import os
 import ConfigParser
@@ -16,7 +14,8 @@ class Settings:
     summary_file = 'summary.log'
     script_path = os.getcwd()
     input_path = script_path
-    output_path = script_path 
+    output_path = script_path
+    config_file = "settings.conf"
     Config = ConfigParser.ConfigParser()
     Log = ConfigParser.ConfigParser()
     working_dir = os.getcwd()
@@ -24,7 +23,7 @@ class Settings:
     subfolders_list = []
 
     def __init__(self):
-        self.read_config_file("settings.conf")
+        self.read_config_file(config_file)
 
     def config_section_map(self, section):
         """ Helper function to read config settings """
@@ -46,11 +45,11 @@ class Settings:
         try:
             self.Config.read(filename)
             self.folder_prefix = self.config_section_map("Config")['prefix']
-            for number, folder in enumerate(self.Config.items( "Folders" )):
+            for number, folder in enumerate(self.Config.items("Folders")):
                 self.folders_list.append(folder[1])
-            for number, subfolder in enumerate(self.Config.items( "SubFolders" )):
+            for number, subfolder in enumerate(self.Config.items("SubFolders")):
                 self.subfolders_list.append(subfolder[1])
         except AttributeError:
             #TODO: this does not work!! (AttributeError or KeyError needed? both?)
-            print("Error while processing settings.conf")
+            print("Error while processing config file")
             sys.exit(1)

@@ -5,15 +5,15 @@
 
 import sys
 
-from administration_validator.validator import AdministrationValidator
+from student_evaluator.evaluator import StudentEvaluator
 
 
 def run():
     """Run the main program"""
-    validator = AdministrationValidator()
+    evaluator = StudentEvaluator()
     #assignment_analyser.init()
-    validator.run()
-    return(validator.exit_value())
+    evaluator.run()
+    return(evaluator.exit_value())
 
 
 if __name__ == "__main__":

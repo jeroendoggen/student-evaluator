@@ -10,6 +10,7 @@ import os
 
 from student_evaluator.logger import Logger
 
+
 class Analyser():
     """ Timer to check the speed of the tool itself (benchmarking) """
     txt_files_list = []
@@ -27,11 +28,11 @@ class Analyser():
 
     def check_folders(self):
         for folder in self.settings.folders_list:
-            path=os.path.join(os.getcwd(), self.settings.folder_prefix, folder)
+            path = os.path.join(os.getcwd(), self.settings.folder_prefix, folder)
             if (os.path.isdir(path)):
                 print("Found folder: " + folder)
                 for subfolder in self.settings.subfolders_list:
-                    subpath=os.path.join(path, subfolder)
+                    subpath = os.path.join(path, subfolder)
                     if (os.path.isdir(subpath)):
                         print("Found subfolder: " + subfolder)
 

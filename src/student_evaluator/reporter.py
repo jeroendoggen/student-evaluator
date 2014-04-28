@@ -7,6 +7,7 @@ from __future__ import print_function, division  # We require Python 2.6+
 
 import os
 
+
 class Reporter():
     """ Logging class """
 
@@ -17,7 +18,6 @@ class Reporter():
         """ Write statistics to files """
         self.write_summary()
 
-     
     def write_summary(self):
         """ Write a summary of the analysis process to a logfile """
         try:
@@ -37,7 +37,7 @@ class Reporter():
             outfile.close()
         except OSError:
             self.exit_program("writing the summary")
-     
+
     def exit_program(self, message):
         """ Exit the program with a message
            TODO: this should move somewhere else (needed in multiple places)
