@@ -15,7 +15,7 @@ from student_evaluator.reporter import Reporter
 
 
 class StudentEvaluator:
-    """ Contains all the tools to analyse Blackboard assignments """
+    """ Contains all the tools to analyse assignments """
     errors = 0
 
     def __init__(self):

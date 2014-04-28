@@ -23,7 +23,7 @@ class Settings:
     subfolders_list = []
 
     def __init__(self):
-        self.read_config_file(config_file)
+        self.read_config_file(self.config_file)
 
     def config_section_map(self, section):
         """ Helper function to read config settings """

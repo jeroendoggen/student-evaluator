@@ -43,3 +43,6 @@ class Analyser():
     def check_file(self, filename):
         """ Check if a file exists """
         pass
+
+    def check_access_rights(self, filename, rights):
+        """ Check if a file/folder has the correct access rights """

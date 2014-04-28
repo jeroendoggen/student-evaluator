@@ -25,11 +25,11 @@ class Reporter():
             outfile = open(self.settings.summary_file, 'w+')
             outfile.write("Build summary:\n")
             outfile.write("--------------\n")
-            outfile.write(" Total exams: ")
-            outfile.write("\n Total slides: ")
-            outfile.write("\n Total courses: ")
-            outfile.write("\n Missing files: ")
-            outfile.write("\n Bad filenames: \n")
+            outfile.write(" Total students: ")
+            outfile.write("\n Best grade: ")
+            outfile.write("\n Worst grade: ")
+            outfile.write("\n Errors: ")
+            outfile.write("\n Comments: \n")
             outfile.close()
             with open(self.settings.summary_file) as f:
                 content = f.read()
@@ -39,7 +39,7 @@ class Reporter():
             self.exit_program("writing the summary")
 
     def exit_program(self, message):
-        """ Exit the program with a message
+        """ Exit the program with an error message
            TODO: this should move somewhere else (needed in multiple places)
         """
         print("Error while " + message)
