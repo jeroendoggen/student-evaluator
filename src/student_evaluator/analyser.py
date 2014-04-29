@@ -8,7 +8,7 @@ from __future__ import print_function, division  # We require Python 2.6+
 
 import os
 
-from student_evaluator.logger import Logger
+from logger import Logger
 
 
 class Analyser():

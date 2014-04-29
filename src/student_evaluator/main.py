@@ -5,7 +5,7 @@
 
 import sys
 
-from student_evaluator.evaluator import StudentEvaluator
+from evaluator import StudentEvaluator
 
 
 def run():

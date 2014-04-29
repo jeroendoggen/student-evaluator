@@ -8,10 +8,10 @@ from __future__ import print_function, division  # We require Python 2.6+
 
 import os
 
-from student_evaluator.settings import Settings
-from student_evaluator.logger import Logger
-from student_evaluator.analyser import Analyser
-from student_evaluator.reporter import Reporter
+from settings import Settings
+from logger import Logger
+from analyser import Analyser
+from reporter import Reporter
 
 
 class StudentEvaluator:
