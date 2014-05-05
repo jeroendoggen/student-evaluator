@@ -7,6 +7,7 @@
 from __future__ import print_function, division  # We require Python 2.6+
 
 import os
+import sys
 
 from logger import Logger
 
@@ -14,17 +15,17 @@ from logger import Logger
 class Analyser():
     """ Timer to check the speed of the tool itself (benchmarking) """
     txt_files_list = []
-    studentnames_list = []
 
-    def __init__(self, settings, logger, reporter):
+    def __init__(self, settings, logger, reporter, setup):
         self.settings = settings
         self.logger = logger
         self.reporter = reporter
+        self.setup = setup
 
     def run(self):
         """ Run all tests, staring narrowing down the scope step by step """
         #self.check_folders()
-        self.get_studentname("naam", )
+        self.get_studentname()
         self.check_file("dummy filename")
 
     def check_folders(self):
@@ -45,17 +46,16 @@ class Analyser():
         """ Check if a file exists """
         pass
 
-    def get_studentname(self, filename, username_prefix, number):
+    def get_studentname(self):
         """Create user accounts on the system """
-        #TODO: only if it does not exist
-        os.system("addgroup students")
-        for x in range(0, number):
-            username = username_prefix + str(x)
-            print("Adding user: " + username)
-
-    def get_studentname(self, filename):
-        """ Check if a file exists """
-        pass
+        for x in self.setup.studentnames_list:
+            filename = "/home/" + x + "/naam"
+            try:
+                with open(filename) as f:
+                    first_line = f.readline()
+                    print (first_line)
+            except:
+                print ("No name provided by: " + x)
 
     def check_access_rights(self, filename, rights):
         """ Check if a file/folder has the correct access rights """

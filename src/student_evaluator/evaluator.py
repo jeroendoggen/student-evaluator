@@ -23,13 +23,13 @@ class StudentEvaluator:
         self.settings = Settings()
         self.mylogger = Logger(self.settings.logfile)
         self.reporter = Reporter(self.settings)
-        self.analyser = Analyser(self.settings, self.reporter, self.mylogger)
         self.setup = Setup(self.settings, self.mylogger)
+        self.analyser = Analyser(self.settings, self.reporter, self.mylogger, self.setup)
 
     def run(self):
         #""" Run the program (call this from main) """
         self.analyser.run()
-        self.reporter.run()
+        #self.reporter.run()
 
     def exit_value(self):
         #"""TODO: Generate the exit value for the application."""
