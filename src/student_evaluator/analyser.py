@@ -24,6 +24,7 @@ class Analyser():
     def run(self):
         """ Run all tests, staring narrowing down the scope step by step """
         #self.check_folders()
+        self.get_studentname("naam", )
         self.check_file("dummy filename")
 
     def check_folders(self):
@@ -41,6 +42,18 @@ class Analyser():
         pass
 
     def check_file(self, filename):
+        """ Check if a file exists """
+        pass
+
+    def get_studentname(self, filename, username_prefix, number):
+        """Create user accounts on the system """
+        #TODO: only if it does not exist
+        os.system("addgroup students")
+        for x in range(0, number):
+            username = username_prefix + str(x)
+            print("Adding user: " + username)
+
+    def get_studentname(self, filename):
         """ Check if a file exists """
         pass
 
