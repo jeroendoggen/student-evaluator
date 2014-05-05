@@ -12,12 +12,15 @@ import os
 class Setup():
     """ Setup class: pre-configure the system """
 
-    def __init__(self, settings):
+    def __init__(self, settings, logger):
         self.settings = settings
+        self.logger = logger
         if self.settings.create_users == '1':
             self.create_users("s", self.settings.number_of_students)
+            self.info("Users created: " + str(self.settings.number_of_students))
         if self.settings.remove_users == '1':
             self.remove_users("s", self.settings.number_of_students)
+            self.info("Users removed: " + str(self.settings.number_of_students))
 
     def create_users(self, username_prefix, number):
         """Create user accounts on the system """
