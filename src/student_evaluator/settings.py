@@ -53,6 +53,9 @@ class Settings:
         try:
             self.Config.read(filename)
             self.folder_prefix = self.config_section_map("Config")['prefix']
+            self.create_users = self.config_section_map("Config")['create_users']
+            self.remove_users = self.config_section_map("Config")['remove_users']
+            self.number_of_students = int(self.config_section_map("Config")['number_of_students'])
             for number, folder in enumerate(self.Config.items("Folders")):
                 self.folders_list.append(folder[1])
             for number, subfolder in enumerate(self.Config.items("SubFolders")):

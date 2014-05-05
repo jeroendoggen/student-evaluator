@@ -23,7 +23,7 @@ class Analyser():
 
     def run(self):
         """ Run all tests, staring narrowing down the scope step by step """
-        self.check_folders()
+        #self.check_folders()
         self.check_file("dummy filename")
 
     def check_folders(self):
