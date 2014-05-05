@@ -13,6 +13,7 @@ from logger import Logger
 from analyser import Analyser
 from reporter import Reporter
 from setup import Setup
+from grader import Grader
 
 
 class StudentEvaluator:
@@ -21,10 +22,12 @@ class StudentEvaluator:
 
     def __init__(self):
         self.settings = Settings()
-        self.mylogger = Logger(self.settings.logfile)
+        self.logger = Logger(self.settings.logfile)
         self.reporter = Reporter(self.settings)
-        self.setup = Setup(self.settings, self.mylogger)
-        self.analyser = Analyser(self.settings, self.reporter, self.mylogger, self.setup)
+        self.setup = Setup(self.settings, self.logger)
+        self.grader = Grader(self.settings, self.logger, self.setup)
+        self.analyser = Analyser(self.settings, self.reporter, self.logger, self.setup, self.grader)
+
 
     def run(self):
         #""" Run the program (call this from main) """

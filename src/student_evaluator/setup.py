@@ -14,7 +14,7 @@ class Setup():
     def __init__(self, settings, logger):
         self.settings = settings
         self.logger = logger
-        self.studentnames_list = []
+        self.usernames_list = []
         self.create_list("s", self.settings.number_of_students)
 
         if self.settings.create_users == '1':
@@ -28,13 +28,13 @@ class Setup():
         """Create a list of usernames to be reused later"""
         for x in range(0, number):
             username = username_prefix + str(x)
-            self.studentnames_list.append(username)
+            self.usernames_list.append(username)
 
     def create_users(self):
         """Create user accounts on the system """
         #TODO: only if it does not exist
         os.system("addgroup students")
-        for x in self.studentnames_list:
+        for x in self.usernames_list:
             print("Adding user: " + x)
             # password = 'student'
             os.system("useradd -p  SNSr7/A1BYa12 -g students " + x)
@@ -43,7 +43,7 @@ class Setup():
 
     def remove_users(self):
         """Remove the user accounts (at the end) """
-        for x in self.studentnames_list:
+        for x in self.usernames_list:
             print("Removing user: ")
             os.system("deluser --remove-home " + x)
 

@@ -13,14 +13,15 @@ from logger import Logger
 
 
 class Analyser():
-    """ Timer to check the speed of the tool itself (benchmarking) """
+    """ Analyse all the documents """
     txt_files_list = []
 
-    def __init__(self, settings, logger, reporter, setup):
+    def __init__(self, settings, logger, reporter, setup, grader):
         self.settings = settings
         self.logger = logger
         self.reporter = reporter
         self.setup = setup
+        self.grader = grader
 
     def run(self):
         """ Run all tests, staring narrowing down the scope step by step """
@@ -28,15 +29,15 @@ class Analyser():
         self.get_studentname()
         self.check_file("dummy filename")
 
-    def check_folders(self):
-        for folder in self.settings.folders_list:
-            path = os.path.join(os.getcwd(), self.settings.folder_prefix, folder)
-            if (os.path.isdir(path)):
-                print("Found folder: " + folder)
-                for subfolder in self.settings.subfolders_list:
-                    subpath = os.path.join(path, subfolder)
-                    if (os.path.isdir(subpath)):
-                        print("Found subfolder: " + subfolder)
+    def check_assignment(self, name):
+        self.check_folder(name)
+        self.check_file(name)
+        self.analyse(name)
+
+    def check_folder(self, folder):
+        path = os.path.join(self.setting.input_path, self.settings.folder_prefix, folder)
+        if (os.path.isdir(path)):
+            
 
     def check_folder(self, filename):
         """ Check if a file exists """
@@ -53,9 +54,11 @@ class Analyser():
             try:
                 with open(filename) as f:
                     first_line = f.readline()
-                    print (first_line)
+                    self.grader.write_studentname(first_line)
+                    #print (first_line)
             except:
-                print ("No name provided by: " + x)
+                #print ("No name provided by: " + x)
+                self.grader.write_studentname(first_line)
 
     def check_access_rights(self, filename, rights):
         """ Check if a file/folder has the correct access rights """

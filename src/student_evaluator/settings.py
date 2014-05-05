@@ -13,8 +13,8 @@ class Settings:
     logfile = "student_evaluator.log"
     summary_file = 'summary.log'
     script_path = os.getcwd()
-    input_path = script_path
-    output_path = script_path
+    input_path = "/home/"
+    output_path = "/var/www/evaluator"
     config_file = "settings.conf"
     Config = ConfigParser.ConfigParser()
     Log = ConfigParser.ConfigParser()
