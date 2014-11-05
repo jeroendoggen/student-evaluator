@@ -21,6 +21,8 @@ def run(number):
         os.system("useradd -p  SNSr7/A1BYa12 -g students " + username )
         os.system("mkdir /home/" + username)
         os.system("chown "+ username + ":students " + "/home/" + username )
+        os.system("usermod " + username + " -s /bin/rbash")
+        os.system("usermod " + username + " -g students")
 
 if __name__ == "__main__":
     sys.exit(run(number))
