@@ -10,6 +10,7 @@ import os
 
 number = 100
 username_prefix = "s"
+target = 
 
 def run(number):
     """Create user accounts on the system """

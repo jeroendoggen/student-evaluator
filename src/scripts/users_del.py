@@ -12,8 +12,7 @@ number = 100
 username_prefix = "s"
 
 def run(number):
-    """Create user accounts on the system """
-    #os.system("addgroup students")
+    """Delete user accounts on the system """
     for x in range(0, number):
         username = username_prefix + str(x)
         print("Removing user: " + username)
